@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["node_modules/*"]
+    },
+    "target": "ESNext"
+  },
+  "include": ["./src"],
+  "references": [{"path": "./tsconfig.node.json"}]
+}

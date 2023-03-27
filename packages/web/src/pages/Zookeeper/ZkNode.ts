@@ -52,6 +52,8 @@ class ZkNode implements TreeNodeNormal {
 
   isLeaf?: boolean | undefined = true;
 
+  title = null;
+
   rawDataChangeCallback: ((arg: ZookeeperNodeDto | null) => void) | null = null;
 
   private _rawData: ZookeeperNodeDto | null = null;

@@ -89,7 +89,7 @@ function RegistryModal({
   open?: boolean;
   onClose?: Function;
 }>) {
-  const { notification } = App.useApp();
+  const { notification, modal } = App.useApp();
   const [open, setOpen] = useState(visible ?? false);
   const { data: zkList, refetch, isFetching } = useGetZookeeperListQuery();
   const [delZk] = useDeleteZookeeperMutation();
@@ -114,7 +114,7 @@ function RegistryModal({
 
   const deleteRegistry = useCallback(
     async (address: string) => {
-      Modal.confirm({
+      modal.confirm({
         title: '确定删除注册中心',
         onOk: async () => {
           const res = await delZk(address).unwrap();
@@ -124,7 +124,7 @@ function RegistryModal({
         },
       });
     },
-    [delZk, notification],
+    [delZk, modal, notification],
   );
 
   const onInputFilterText = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
